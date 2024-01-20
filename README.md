@@ -82,7 +82,8 @@ Code Flow
        - The image below shows the data present in mongodb
          ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/room.png)
          
-     - Adhering to the requirement provided, I had created 6 endpoints. Get to know the Enpoints [here](#api_endpoint)
+     - Adhering to the requirement provided, I had created 6 endpoints. Get to know the Enpoints   
+       (https://github.com/BajraYeJoon/Reserve/blob/main/README.md#api_endpoint))
      - Then, these endpoints are tested in postman and checked if the outputs are correct. After endpoints, The routes are configured in the    
        entry point of the backend.
      - For the clean code, and interacting with the backend, I chose to implement apiService as the middleware in frontend. This would contain 
