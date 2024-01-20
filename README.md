@@ -169,7 +169,7 @@ Api Documentation
    * Book the room by giving check in anc check out date
    * Invoice generated
    * Download the invoice
-     ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/onebook.webm)
+     https://github.com/BajraYeJoon/Reserve/assets/25260689/600639a6-a0b4-4aae-a246-4345b567c9ca
 
  2. Conflicting Dates;
     As in the video I have created the booking from that specific date range and again querying for the room in which the conflicting dates 
