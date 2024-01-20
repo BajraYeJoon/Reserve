@@ -71,6 +71,7 @@ const apiService = {
       throw error;
     }
   },
+
   createInvoice: async (bookingId: string, totalCost: number) => {
     try {
       return await fetchAPI(`${BASE_URL}/invoice`, {

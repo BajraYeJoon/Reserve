@@ -103,45 +103,6 @@ const BookRoom = () => {
           />
         </div>
 
-        {/* {bookings && bookings.length > 0 && (
-          <div
-            className="flex-1 items-center justify-center flex flex-col"
-            style={{ height: 500 }}
-          >
-            <h3 className="mx-auto text-base md:text-lg md:font-medium">
-              Booked Rooms Date
-            </h3>
-            <Calendar
-              localizer={localizer}
-              events={bookings}
-              startAccessor="start"
-              endAccessor="end"
-              style={{
-                height: 400,
-                width: "80%",
-                margin: "auto",
-
-                color: "blue",
-              }}
-              //reference from https://stackoverflow.com/questions/34587067/change-color-of-react-big-calendar-events
-              eventPropGetter={() => {
-                return {
-                  className: "",
-                  style: {
-                    backgroundColor: "#3B82F6",
-                    borderRadius: "10px",
-                  },
-                };
-              }}
-            />
-
-            <p className="italic">
-              Note: Please book the room which are not in the range.
-            </p>
-          </div>
-        )} */}
-
-        {/* Always render the calendar */}
         <div
           className="flex-1 items-center justify-center flex flex-col"
           style={{ height: 500 }}
@@ -158,7 +119,7 @@ const BookRoom = () => {
               height: 400,
               width: "80%",
               margin: "auto",
-              color: "blue",
+              color: "#3B82F6",
             }}
             //reference from https://stackoverflow.com/questions/34587067/change-color-of-react-big-calendar-events
             eventPropGetter={() => {

@@ -10,6 +10,7 @@ import Layout from "./screen/Layout/Layout";
 import Dashboard from "./screen/Dashboard/Dashboard";
 import Cart from "./features/Cart";
 
+//Routes for endpoint
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>

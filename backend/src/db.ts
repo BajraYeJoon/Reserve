@@ -5,7 +5,10 @@ dotenv.config();
 
 const dbURI: string = process.env.DB_URI || "";
 
-//connect to the database
+/**
+ * Connection to the MongoDB database
+ *
+ */
 export const connectDB = async () => {
   try {
     await mongoose.connect(dbURI).then((data: any) => {

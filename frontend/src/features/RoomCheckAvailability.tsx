@@ -38,7 +38,7 @@ function RoomCheckAvailability() {
 
   return (
     <>
-      <div className="flex  bg-blue-600 md:rounded-xl md:px-8 md:py-8 flex-col md:-mt-32 justify-center gap-4 items-center ">
+      <div className="flex background-gradient md:rounded-xl md:px-8 md:py-8 flex-col md:-mt-32 justify-center gap-4 items-center ">
         <h1 className="text-base md:text-xl text-white tracking-wide font-semibold">
           Reserve a Room
         </h1>
