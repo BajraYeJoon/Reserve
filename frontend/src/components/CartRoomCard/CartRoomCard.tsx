@@ -17,7 +17,7 @@ const CartRoomCard = (
           alt=""
         />
 
-        {/* <div className="flex p-2 md:px-5 md:py-4"> */}
+        {/* ROOM CARD */}
         <div>
           <h5 className=" flex my-2  text-2xl font-bold tracking-tight text-gray-900">
             {room.name}
@@ -39,7 +39,6 @@ const CartRoomCard = (
             onClick={() => dispatch(removeFromCart(room.id))}
           />
         </div>
-        {/* </div> */}
       </div>
     </>
   );

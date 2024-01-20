@@ -18,7 +18,6 @@ import InvoiceReceipt from "../components/Invoice/InvoiceReceipt";
 // }
 
 const Cart = () => {
-  // const { id } = useParams<{ id: string }>();
   const [checkIn, setCheckIn] = useState<string>("");
   const [checkOut, setCheckOut] = useState<string>("");
   const [guestName, setGuestName] = useState<string>("");
