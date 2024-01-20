@@ -3,7 +3,7 @@
 ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/homepage.png)
 
 Reserve — is for you if you **want to book premium hotels** in easy way with intuitive UI interfaces.
-[Screenshots And Demo](#screenshot-and-demo)
+[Screenshots And Demo](#screenshots-and-demo)
 
 ## Features:
   * Check for Availability of Room 
@@ -170,4 +170,24 @@ Api Documentation
    * Invoice generated
    * Download the invoice
      ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/onebook.webm)
+
+ 2. Conflicting Dates;
+    As in the video I have created the booking from that specific date range and again querying for the room in which the conflicting dates 
+    exist for which i only get the other room result.
+    ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/conflictingdates.png)
+
+ 3. Updates in Calendar
+    After the room has been booked, if another user view details of the same room, the prevoisly set booked dates will be reflected in the calendar
+    ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/alreadybooked.png)
+
+ 4. Discount for 3 or more room to be booked
+     As per requirement, if the user reserves 3 or more room, a discont of 5% will be applied .
+    ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/discount.png)
+
+ 5. Invoice creation
+    Preview of invoice will be generated after the room has been booked.
+    ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/invoicecreation.png)
+
+ 6. No room in case of no room available for the given dates.
+    ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/noroom.png)
     
