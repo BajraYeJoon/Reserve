@@ -19,6 +19,7 @@ Table of contents
      * [Frontend](#frontend)
   * [Tech Stack](#tech-stack)
   * [Code Flow](#code-flow)
+  * [FlowChart](#flowchart)
   * [Api Enpoints Documentation](#api_endpoint)
   
 <!--te-->
@@ -103,4 +104,9 @@ Code Flow
        
      - For multiple booking of room, instead of booking the room at first, I had made use of Reserving the room first which will be added into         the cart and if the user books 3 or more room, a discount of 5% is applied.
      - To generate the invoice, I had implemented `jsPDF` where the use can download the invoice of the booking.
-       
+
+FlowChart
+============
+
+  1. The image below show how I interact with the backend from the frontend through apiservice to make call to the api and get the different results.
+     ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/apiinteract.png)
