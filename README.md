@@ -110,3 +110,6 @@ FlowChart
 
   1. The image below show how I interact with the backend from the frontend through apiservice to make call to the api and get the different results.
      ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/apiinteract.png)
+
+  2. The image below is how i structure my frontend to connect with the backend and also different component to be reusable and modular.
+     ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/frontend.png)
