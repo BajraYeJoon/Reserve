@@ -1,5 +1,7 @@
 # Reserve - A Hotel Room Booking Platform
 
+![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/homepage.png)
+
 Reserve — is for you if you **want to book premium hotels** in easy way with intuitive UI interfaces.
 
 ## Features: 
@@ -77,7 +79,8 @@ Code Flow
        created schema models and  API endpoints required by the frontend.
        - After model and schema are done, I manually created some room data to populate the rooms that will be used for booking.
        - The image below shows the data present in mongodb
-       - 
+         ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/room.png)
+         
      - Adhering to the requirement provided, I had created 6 endpoints. Get to know the Enpoints [here](#api_endpoint)
      - Then, these endpoints are tested in postman and checked if the outputs are correct. After endpoints, The routes are configured in the    
        entry point of the backend.
@@ -92,6 +95,7 @@ Code Flow
        - store - I used Redux here to control the state of the count of the reserved room, removal of the room from the cart and clearing the \                   cart after booked by the user.
       
      - For resolving the problem of conflicts within same date range or if any date exists on the booked room, I had used the mongodb `$or`             to check the conflicting date.
+       ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/conflict.png)
     
      - I had also keep in mind about disabling the button until the fields for check in date, checkout date or any other field are either not           populated. Proper logging of error and message to user has been implmented with `try` and `catch` block.
      - For users to see if the room has already been booked on certain dates, I had made use of package like `react-big-calendar` and    
