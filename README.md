@@ -82,7 +82,8 @@ Code Flow
        - The image below shows the data present in mongodb
          ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/room.png)
          
-     - Adhering to the requirement provided, I had created 6 endpoints. Get to know the Enpoints [here](#api_endpoint)
+     - Adhering to the requirement provided, I had created 6 endpoints. Get to know the Enpoints   
+       (https://github.com/BajraYeJoon/Reserve/blob/main/README.md#api_endpoint))
      - Then, these endpoints are tested in postman and checked if the outputs are correct. After endpoints, The routes are configured in the    
        entry point of the backend.
      - For the clean code, and interacting with the backend, I chose to implement apiService as the middleware in frontend. This would contain 
@@ -110,3 +111,54 @@ FlowChart
 
   1. The image below show how I interact with the backend from the frontend through apiservice to make call to the api and get the different results.
      ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/apiinteract.png)
+
+  2. The image below is how i structure my frontend to connect with the backend and also different component to be reusable and modular.
+     ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/frontend.png)
+
+Api Enpoints Documentation
+==========================
+  ## Get Rooms from the database
+
+   + ## fetchRooms
+     Fetches all rooms from the API.
+       * **Endpoint**: `GET /allrooms`
+       * **Returns**:  a Promise that resolves to an array of room objects. Each room object contains the room details.
+     
+   + ## roomDetails
+     Fetches the details of a specific room from the API.
+       * **Endpoint**: `GET /rooms/{id}`
+       * **Parameters**: `id` (string): The ID of the room to fetch.
+     
+   + ## checkRoomAvailability
+     Checks the availability of rooms for a specific date range and room type.
+       * **Endpoint**: `GET /rooms?startDate={startDate}&endDate={endDate}&type={type}`
+       * **Parameters**: `dates` (object): An object containing the `startDate` and `endDate` for which to check room availability. Both  
+       * `startDate` and `endDate` should be strings in the format 'YYYY-MM-DD'.
+       * `type` (string): The type of room to check availability for.
+    
+  ## Book Rooms Endpoints
+
+   + ## bookRoom
+      * **Endpoint**: `POST /book`
+      * **Parameters**: - `roomId` (string): The ID of the room to book.
+      * `checkIn` (string): The check-in date in 'YYYY-MM-DD' format.
+      * `checkOut` (string): The check-out date in 'YYYY-MM-DD' format.
+      * `guestName` (string): The name of the guest.
+
+   + ## getBookingsForRoom
+      Fetches all bookings for a specific room.
+      * **Endpoint**: `GET /bookings/{id}`
+      * **Parameters**: - `roomId` (string): The ID of the room to book.
+      * `checkIn` (string): The check-in date in 'YYYY-MM-DD' format.
+      * `checkOut` (string): The check-out date in 'YYYY-MM-DD' format.
+      * `guestName` (string): The name of the guest.
+
+  ## Invoice Endpoints
+  
+   + ## createInvoice
+     Creates an invoice for a booking.
+      * **Endpoint**: `POST /invoice`
+      * **Parameters**: id (string): The ID of the room.
+      
+
+    
