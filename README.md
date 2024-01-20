@@ -3,8 +3,9 @@
 ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/homepage.png)
 
 Reserve — is for you if you **want to book premium hotels** in easy way with intuitive UI interfaces.
+[Screenshots And Demo](#screenshot-and-demo)
 
-## Features: 
+## Features:
   * Check for Availability of Room 
   * No Conflicting of Bookings, Bookings will be shown if customer has booked the room for specific date range,
   * Room Details, Multiple Room Bookings
@@ -20,7 +21,7 @@ Table of contents
   * [Tech Stack](#tech-stack)
   * [Code Flow](#code-flow)
   * [FlowChart](#flowchart)
-  * [Api Enpoints Documentation](#api_endpoint)
+  * [Api Documentation](#api-documentation)
   
 <!--te-->
 
@@ -115,7 +116,7 @@ FlowChart
   2. The image below is how i structure my frontend to connect with the backend and also different component to be reusable and modular.
      ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/frontend.png)
 
-Api Enpoints Documentation
+Api Documentation
 ==========================
   ## Get Rooms from the database
 
@@ -159,6 +160,14 @@ Api Enpoints Documentation
      Creates an invoice for a booking.
       * **Endpoint**: `POST /invoice`
       * **Parameters**: id (string): The ID of the room.
-      
 
+### Screenshots And Demo
+1. Video Demo on searching and booking the room .
+   * Search the room
+   * Reserve the room
+   * Click the reserved room Cart
+   * Book the room by giving check in anc check out date
+   * Invoice generated
+   * Download the invoice
+     ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/onebook.webm)
     
