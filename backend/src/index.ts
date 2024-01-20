@@ -1,13 +1,18 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./db";
-import getRoom from "./routes/route";
+import getRoom from "./routes/room";
 import bookRoom from "./routes/book";
 import createinvoice from "./routes/invoice";
 import cors from "cors";
 
 dotenv.config();
 
+/**
+ * Initialization of Express app, routes
+ * starts server listening on port.
+ * Connects to database when server starts.
+ */
 const app: Express = express();
 const port = process.env.PORT || 3000;
 

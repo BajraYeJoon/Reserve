@@ -18,7 +18,6 @@ import InvoiceReceipt from "../components/Invoice/InvoiceReceipt";
 // }
 
 const Cart = () => {
-  // const { id } = useParams<{ id: string }>();
   const [checkIn, setCheckIn] = useState<string>("");
   const [checkOut, setCheckOut] = useState<string>("");
   const [guestName, setGuestName] = useState<string>("");
@@ -84,7 +83,8 @@ const Cart = () => {
             Discount Applied: 5%
           </p>
         )}
-        <p>Total Cost: ${calculateTotalCost()}</p>
+        <hr className="w-full bg-gray-500" />
+        <p className="mb-6">Total Cost: ${calculateTotalCost()}</p>
       </div>
 
       <>

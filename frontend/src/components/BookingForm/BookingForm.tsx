@@ -24,9 +24,9 @@ const BookingForm = ({
   cart,
 }: BookingFormProps) => {
   return (
-    <div className="flex bg-blue-600 md:rounded-xl md:px-8 md:py-8 flex-col  justify-center gap-4 items-center ">
+    <div className="flex background-gradient md:rounded-xl md:px-8 md:py-8 flex-col  justify-center gap-4 items-center ">
       <h1 className="text-base md:text-xl text-white tracking-wide font-semibold">
-        Reserve a Room
+        Book Rooms
       </h1>
 
       <div className="flex flex-col items-center sm:flex-row w-full bg-blue-800 px-8 py-2 rounded-xl text-white justify-center md:items-end gap-8">

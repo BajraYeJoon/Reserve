@@ -37,6 +37,7 @@ const InvoiceReceipt = ({ invoice }: any) => {
 
       <p className="text-base font-bold my-4">Invoice ID: {invoice?._id}</p>
 
+      {/* INVOICE INFORMATION  */}
       <div className="flex justify-between gap-12">
         <p className="font-bold text-lg">
           Customer Name:{" "}
@@ -63,6 +64,7 @@ const InvoiceReceipt = ({ invoice }: any) => {
 
       <p className="text-center font-bold">Total Cost: ${invoice?.totalCost}</p>
 
+      {/* INVOICE PDF DOWNLOAD */}
       <div
         className="px-2 py-4 bg-gray-200 text-center rounded-md"
         onClick={downloadPdf}

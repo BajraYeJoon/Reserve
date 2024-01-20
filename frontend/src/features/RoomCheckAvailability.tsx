@@ -6,13 +6,23 @@ import Button from "../components/Inputs/Button";
 import RoomCard from "../components/RoomCard/RoomCard";
 import CustomInput from "../components/Inputs/CustomInput";
 
+interface Room {
+  _id: string;
+  name: string;
+  image: string;
+  type: string;
+  description: string;
+  price: number;
+}
+
 function RoomCheckAvailability() {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [roomType, setRoomType] = useState("");
-  const [rooms, setRooms] = useState<any[]>([]);
+  const [rooms, setRooms] = useState<Room[]>([]);
   const [showMessage, setShowMessage] = useState(false);
 
+  // function to check the available room
   const checkAvailability = async () => {
     try {
       const availableRooms = await apiService.checkRoomAvailability(
@@ -23,6 +33,7 @@ function RoomCheckAvailability() {
       setRooms(availableRooms);
     } catch (error) {
       console.error("Failed to fetch available rooms:", error);
+      alert("Failed to fetch available rooms. Please try again later.");
     }
   };
 
@@ -38,10 +49,12 @@ function RoomCheckAvailability() {
 
   return (
     <>
-      <div className="flex  bg-blue-600 md:rounded-xl md:px-8 md:py-8 flex-col md:-mt-32 justify-center gap-4 items-center ">
+      <div className="flex background-gradient md:rounded-xl md:px-8 md:py-8 flex-col md:-mt-32 justify-center gap-4 items-center ">
         <h1 className="text-base md:text-xl text-white tracking-wide font-semibold">
           Reserve a Room
         </h1>
+
+        {/* Room Availability Check of the rooms */}
 
         <div className="flex flex-col sm:flex-row w-full bg-blue-800 px-8 py-2 rounded-xl text-white justify-center items-end gap-8">
           <CustomInput
@@ -75,6 +88,8 @@ function RoomCheckAvailability() {
           />
         </div>
       </div>
+
+      {/* Displaying of the rooms after the reqeust made to the backend */}
       {rooms?.length > 0 ? (
         <div className="flex flex-col md:flex-row items-center gap-4 mt-12 justify-around">
           {rooms.map((room) => (

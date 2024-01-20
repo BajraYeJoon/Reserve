@@ -23,8 +23,7 @@ const AllRooms = () => {
       <h1 className="text-lg md:text-2xl font-medium ">
         Available Rooms &#11162;
       </h1>
-
-      <div className="flex flex-col md:flex-row items-center gap-4 justify-around">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {rooms.map((room) => (
           <div key={room._id}>
             <RoomCard room={room} />

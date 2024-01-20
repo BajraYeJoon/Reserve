@@ -6,6 +6,7 @@ import Hero from "../../components/Hero";
 const Dashboard = () => {
   return (
     <>
+      {/* All the contents in Dashboard */}
       <Hero />
       <MaxWidthWrapper>
         <RoomCheckAvailability />

@@ -2,11 +2,12 @@ import {
   checkAvailability,
   roomDetails,
   getAllRooms,
-  getBookingsForRoom,
-} from "../controllers/controllers";
+} from "../controllers/roomquery.controllers";
 import { Router } from "express";
 
 const getRoom: Router = Router();
+
+// All the routes for querying of the room
 
 getRoom.get("/allrooms", getAllRooms);
 
