@@ -5,6 +5,8 @@ export interface Room extends Document {
   type: string;
   price: number;
   available: boolean;
+  image: string;
+  description: string;
 }
 
 const roomSchema = new Schema<Room>({
@@ -12,6 +14,8 @@ const roomSchema = new Schema<Room>({
   type: { type: String, required: true },
   price: { type: Number, required: true },
   available: { type: Boolean, default: true },
+  image: { type: String, required: true },
+  description: { type: String, required: true },
 });
 
 const RoomModel = mongoose.model<Room>("Room", roomSchema);

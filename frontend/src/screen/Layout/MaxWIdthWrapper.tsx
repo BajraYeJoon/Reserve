@@ -7,7 +7,7 @@ export const MaxWidthWrapper = ({
   children: ReactNode;
 }) => {
   return (
-    <div className="flex items-center flex-col px-2.5 max-w-screen-xl ">
+    <div className="flex mx-auto items-center flex-col px-2.5 max-w-screen-xl ">
       {children}
     </div>
   );

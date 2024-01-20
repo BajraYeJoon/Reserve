@@ -131,12 +131,22 @@ export const createInvoice = async (req: Request, res: Response) => {
     return res.status(404).json({ message: "Booking not found" });
   }
 
+  // Fetch the room details
+  const room = await RoomModel.findById(booking.roomId);
+  if (!room) {
+    return res.status(404).json({ message: "Room not found" });
+  }
+
   const newInvoice = {
     bookingId,
     customerName: booking.guestName,
     totalCost,
     checkInDate: booking.checkIn,
     checkOutDate: booking.checkOut,
+    roomType: room.type,
+    roomPrice: room.price,
+    roomName: room.name,
+    roomDescription: room.description,
     Status: "Paid",
     // discount: 0,
   };

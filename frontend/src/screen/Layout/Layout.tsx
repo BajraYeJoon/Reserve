@@ -1,13 +1,15 @@
 import { Outlet } from "react-router-dom";
-import { MaxWidthWrapper } from "./MaxWIdthWrapper";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 const Layout = () => {
   return (
-    <MaxWidthWrapper>
+    <>
       <Header />
+
       <Outlet />
-      FOoter
-    </MaxWidthWrapper>
+
+      <Footer />
+    </>
   );
 };
 
