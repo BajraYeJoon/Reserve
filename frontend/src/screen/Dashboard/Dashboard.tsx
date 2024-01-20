@@ -8,8 +8,8 @@ const Dashboard = () => {
     <>
       <Hero />
       <MaxWidthWrapper>
-        <AllRooms />
         <RoomCheckAvailability />
+        <AllRooms />
       </MaxWidthWrapper>
     </>
   );

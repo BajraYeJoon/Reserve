@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import apiService from "../utils/apiService";
-import { Link } from "react-router-dom";
-
+import RoomCard from "../components/RoomCard/RoomCard";
 const AllRooms = () => {
   const [rooms, setRooms] = useState<any[]>([]);
 
@@ -19,16 +19,18 @@ const AllRooms = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Available Rooms</h1>
-      {rooms?.map((room) => (
-        <div key={room._id}>
-          <p>{room.name}</p>
-          <p>{room.price}</p>
-          <span>{room.type}</span>
-          <Link to={`/rooms/${room._id}`}>Select Room</Link>
-        </div>
-      ))}
+    <div className="flex flex-col items-start gap-4 mt-6 md:mt-12 ">
+      <h1 className="text-lg md:text-2xl font-medium ">
+        Available Rooms &#11162;
+      </h1>
+
+      <div className="flex flex-col md:flex-row items-center gap-4 justify-around">
+        {rooms.map((room) => (
+          <div key={room._id}>
+            <RoomCard room={room} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

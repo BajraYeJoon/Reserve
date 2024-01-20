@@ -8,7 +8,7 @@ const Banner = () => {
       role="alert"
     >
       <span className="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">
-        Offer
+        Offer 🎉
       </span>{" "}
       <span className="text-sm font-medium">
         Get 5% discount of booking of 3 or more rooms!

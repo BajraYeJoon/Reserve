@@ -1,20 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart } from "../features/cart/cartSlice";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { clearCart } from "../features/cart/cartSlice";
+import { Key, useState } from "react";
 import apiService from "../utils/apiService";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import Invoice from "../components/Invoice";
 
-interface Room {
-  id: string;
-  name: string;
-  price: number;
-}
+import CartRoomCard from "../components/CartRoomCard/CartRoomCard";
+import BookingForm from "../components/BookingForm/BookingForm";
+import InvoiceReceipt from "../components/Invoice/InvoiceReceipt";
+
+// interface CartRoomInfo {
+//   _id: string;
+//   name: string;
+//   price: number;
+//   image: string;
+//   description: string;
+//   type: string;
+// }
 
 const Cart = () => {
-  const { id } = useParams<{ id: string }>();
-  const [room, setRoom] = useState<Room | null>(null);
+  // const { id } = useParams<{ id: string }>();
   const [checkIn, setCheckIn] = useState<string>("");
   const [checkOut, setCheckOut] = useState<string>("");
   const [guestName, setGuestName] = useState<string>("");
@@ -24,15 +28,10 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  // Call your API service to book each room
-  // You might want to handle this on the server side to ensure atomicity
   const handleBookAll = async () => {
     try {
       // Loop over the rooms in the cart
       for (const room of cart) {
-        // Book the room
-        console.log(room.id);
-
         const booking = await apiService.bookRoom(
           room.id!,
           checkIn,
@@ -40,9 +39,8 @@ const Cart = () => {
           guestName
         );
 
-        console.log(booking);
-
         setIsBooked(true);
+        dispatch(clearCart());
 
         // Calculate total cost
         const totalCost = calculateTotalCost();
@@ -59,7 +57,10 @@ const Cart = () => {
 
   const calculateTotalCost = () => {
     const cartCount = cart.length;
-    let baseTotal = cart.reduce((total, cartItem) => total + cartItem.price, 0);
+    let baseTotal = cart.reduce(
+      (total: any, cartItem: { price: any }) => total + cartItem.price,
+      0
+    );
 
     if (cartCount >= 3) {
       baseTotal = baseTotal * 0.95;
@@ -69,71 +70,37 @@ const Cart = () => {
   };
 
   return (
-    <div>
-      {cart.map((room) => (
-        <div key={room.id}>
-          <h2>{room.name}</h2>
-          <p>{room.price}</p>
-          <button onClick={() => dispatch(removeFromCart(room.id))}>
-            Remove
-          </button>
-        </div>
-      ))}
-
-      {cart.length >= 3 && (
-        <p style={{ fontWeight: "bold", color: "green" }}>
-          Discount Applied: 5%
-        </p>
-      )}
+    <div className="flex h-min flex-col justify-center items-center gap-2  ">
+      <div className="flex flex-col items-center gap-4 justify-around ">
+        {cart.map((cartinfo: { _id: Key | null | undefined }) => (
+          <CartRoomCard room={cartinfo} key={cartinfo._id} />
+        ))}
+      </div>
 
       {/* Display total cost */}
-      <p>Total Cost: ${calculateTotalCost()}</p>
-
-      <input
-        type="date"
-        value={checkIn}
-        onChange={(e) => setCheckIn(e.target.value)}
-      />
-      <input
-        type="date"
-        value={checkOut}
-        onChange={(e) => setCheckOut(e.target.value)}
-      />
-      <input
-        type="text"
-        value={guestName}
-        onChange={(e) => setGuestName(e.target.value)}
-      />
-      {isBooked ? (
-        <div>
-          <p>Booking Confirmed!</p>
-          <p>Invoice ID: {invoice?._id}</p>
-          <p>Total Cost: ${invoice?.totalCost}</p>
-          <p>Customer Name: {invoice?.customerName}</p>
-          <p>Status: {invoice?.Status}</p>
-          <p>
-            Check In Date: {new Date(invoice?.checkInDate).toLocaleDateString()}
+      <div className="font-bold tracking-wide text-lg md:text-xl text-center">
+        {cart.length >= 3 && (
+          <p style={{ fontWeight: "bold", color: "green" }}>
+            Discount Applied: 5%
           </p>
-          <p>
-            Check Out Date:{" "}
-            {new Date(invoice?.checkOutDate).toLocaleDateString()}
-          </p>
+        )}
+        <p>Total Cost: ${calculateTotalCost()}</p>
+      </div>
 
-          <div>
-            {/* <PDFDownloadLink
-              document={<Invoice invoice={invoice} />}
-              fileName="invoice.pdf"
-            >
-             
-            </PDFDownloadLink> */}
-            <div className="px-2 py-4 bg-gray-200 text-center rounded-md">
-              <span>Download</span>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <button onClick={handleBookAll}>Book All</button>
-      )}
+      <>
+        <BookingForm
+          checkIn={checkIn}
+          setCheckIn={setCheckIn}
+          checkOut={checkOut}
+          setCheckOut={setCheckOut}
+          guestName={guestName}
+          setGuestName={setGuestName}
+          handleBookAll={handleBookAll}
+          cart={cart}
+        />
+      </>
+
+      {isBooked && <InvoiceReceipt invoice={invoice} />}
     </div>
   );
 };

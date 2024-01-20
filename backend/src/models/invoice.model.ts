@@ -7,6 +7,10 @@ interface Invoice extends Document {
   discount: number;
   checkInDate: Date;
   checkOutDate: Date;
+  roomType: string;
+  roomPrice: number;
+  roomName: string;
+  roomDescription: string;
   Status: string;
 }
 
@@ -23,6 +27,10 @@ const invoiceSchema = new Schema<Invoice>({
     type: Date,
     required: true,
   },
+  roomType: { type: String, required: true },
+  roomPrice: { type: Number, required: true },
+  roomName: { type: String, required: true },
+  roomDescription: { type: String, required: true },
   Status: {
     type: String,
     default: "Paid",
