@@ -99,9 +99,9 @@ Code Flow
                            invoice logic are abstracted in this folder
        - store - I used Redux here to control the state of the count of the reserved room, removal of the room from the cart and clearing the \                   cart after booked by the user.
       
-     - For resolving the problem of conflicts within same date range or if any date exists on the booked room, I had used the mongodb `$or`             to check the conflicting date.
+     - For resolving the problem of conflicts within same date range or if any date exists on the booked room, I had used the `lte: endDate` and `gte: startDate` methods from mongodb. The code checks if a new booking starts before an existing booking has ended , or if the new booking ends after an existing booking has started, resulting in a conflict. 
        ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/conflict.png)
-       ![image](https://github.com/BajraYeJoon/Reserve/assets/25260689/7365dba2-b45d-4598-bf78-77ab9e63ef2a)
+       
 
     
      - I had also keep in mind about disabling the button until the fields for check in date, checkout date or any other field are either not           populated. Proper logging of error and message to user has been implmented with `try` and `catch` block.
