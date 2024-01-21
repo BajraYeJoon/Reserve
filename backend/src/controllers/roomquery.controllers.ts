@@ -49,9 +49,12 @@ export const checkAvailability = async (req: Request, res: Response) => {
     const conflictingRoomIds = conflictingBookings.map((booking) =>
       booking.roomId.toString()
     );
+
     const availableRooms: Room[] = rooms.filter(
       (room) => !conflictingRoomIds.includes(room._id.toString())
     );
+
+    console.log("availableRooms", availableRooms);
     res.json(availableRooms);
   } catch (error) {
     res.status(500).json({ message: "Error checking availability" });
