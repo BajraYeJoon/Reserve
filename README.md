@@ -101,7 +101,7 @@ Code Flow
       
      - For resolving the problem of conflicts within same date range or if any date exists on the booked room, I had used the `lte: endDate` and `gte: startDate` methods from mongodb. The code checks if a new booking starts before an existing booking has ended , or if the new booking ends after an existing booking has started, resulting in a conflict. 
        ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/conflict.png)
-       
+       ![image](https://github.com/BajraYeJoon/Reserve/assets/25260689/9a0311eb-3213-47d9-a7ad-b90fff37bb84)
 
     
      - I had also keep in mind about disabling the button until the fields for check in date, checkout date or any other field are either not           populated. Proper logging of error and message to user has been implmented with `try` and `catch` block.
