@@ -35,26 +35,23 @@ export const checkAvailability = async (req: Request, res: Response) => {
     const endDate = new Date(req.query.endDate as string);
     const roomType = req.query.type as string;
 
-    // Find all rooms of the requested type
+    // Finding all rooms of the requested type
     const rooms = await RoomModel.find({ type: roomType });
 
-    // Find all bookings that conflict with the requested dates
+    // Finding bookings that conflict with requested dates
     const conflictingBookings: Booking[] = await BookingModel.find({
       roomId: { $in: rooms.map((room) => room._id) },
-      $or: [
-        { checkIn: { $lte: endDate }, checkOut: { $gte: startDate } },
-        { checkIn: { $lte: startDate }, checkOut: { $gte: endDate } },
-      ],
+      checkIn: { $lte: endDate },
+      checkOut: { $gte: startDate },
     });
 
-    // Find available rooms by excluding booked rooms
-    const availableRooms: Room[] = rooms.filter(
-      (room) =>
-        !conflictingBookings.some(
-          (booking) => booking.roomId.toString() === room._id.toString()
-        )
+    // To Find available rooms by excluding booked rooms
+    const conflictingRoomIds = conflictingBookings.map((booking) =>
+      booking.roomId.toString()
     );
-
+    const availableRooms: Room[] = rooms.filter(
+      (room) => !conflictingRoomIds.includes(room._id.toString())
+    );
     res.json(availableRooms);
   } catch (error) {
     res.status(500).json({ message: "Error checking availability" });
