@@ -50,6 +50,7 @@ This project is divided into two parts: frontend and backend. Follow the instruc
       ```bash
          npm run dev
       ```
+      The backend will now be running on `PORT : 8000` which is specified on the .env
 
 ### Frontend
 
@@ -66,6 +67,7 @@ This project is divided into two parts: frontend and backend. Follow the instruc
       ```bash
          npm run dev
       ```
+      The frontend will run on `port 5173`
 
 Tech Stack
 ============
@@ -163,32 +165,38 @@ Api Documentation
 
 ### Screenshots And Demo
 1. Video Demo on searching and booking the room .
+   
    * Search the room
    * Reserve the room
    * Click the reserved room Cart
    * Book the room by giving check in anc check out date
    * Invoice generated
    * Download the invoice
-   * ![You can access the video here](https://github.com/BajraYeJoon/Reserve/issues/4)
+   * [You can access the video here](https://github.com/BajraYeJoon/Reserve/issues/4)
    * https://github.com/BajraYeJoon/Reserve/assets/25260689/600639a6-a0b4-4aae-a246-4345b567c9ca
 
- 2. Conflicting Dates;
+ 3. Conflicting Dates;
+    
     As in the video I have created the booking from that specific date range and again querying for the room in which the conflicting dates 
     exist for which i only get the other room result.
     ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/conflictingdates.png)
 
- 3. Updates in Calendar
+ 4. Updates in Calendar
+    
     After the room has been booked, if another user view details of the same room, the prevoisly set booked dates will be reflected in the calendar
     ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/alreadybooked.png)
 
- 4. Discount for 3 or more room to be booked
+ 6. Discount for 3 or more room to be booked
+    
      As per requirement, if the user reserves 3 or more room, a discont of 5% will be applied .
     ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/discount.png)
 
- 5. Invoice creation
+ 8. Invoice creation
+    
     Preview of invoice will be generated after the room has been booked.
     ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/invoicecreation.png)
 
- 6. No room in case of no room available for the given dates.
-    ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/noroom.png)
+ 10. No room in case of no room available for the given dates.
+     
+   ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/noroom.png)
     
