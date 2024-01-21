@@ -101,6 +101,8 @@ Code Flow
       
      - For resolving the problem of conflicts within same date range or if any date exists on the booked room, I had used the mongodb `$or`             to check the conflicting date.
        ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/conflict.png)
+       ![image](https://github.com/BajraYeJoon/Reserve/assets/25260689/7365dba2-b45d-4598-bf78-77ab9e63ef2a)
+
     
      - I had also keep in mind about disabling the button until the fields for check in date, checkout date or any other field are either not           populated. Proper logging of error and message to user has been implmented with `try` and `catch` block.
      - For users to see if the room has already been booked on certain dates, I had made use of package like `react-big-calendar` and    
