@@ -9,7 +9,7 @@ Reserve — is for you if you **want to book premium hotels** in easy way with i
   * Check for Availability of Room 
   * No Conflicting of Bookings, Bookings will be shown if customer has booked the room for specific date range,
   * Room Details, Multiple Room Bookings
-  * Offer: 5% of discount applied o
+  * Offer: 5% of discount applied on booking of 3 or more room
 
 Table of contents
 =================
