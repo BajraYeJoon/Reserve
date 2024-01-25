@@ -25,6 +25,17 @@ Table of contents
   
 <!--te-->
 
+<hr />
+<br />
+
+> [!IMPORTANT]
+> The site has been uploaded into vercel. The live site is `active`.
+> For backend the api is also uploaded on `render.com`.
+> The project can be run without the need to download and run it locally. To run it locally, please see [Installation](#installation)
+
+<hr />
+<br />
+
 Installation
 ============
 
