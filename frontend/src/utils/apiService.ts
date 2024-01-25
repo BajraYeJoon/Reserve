@@ -1,4 +1,5 @@
-const BASE_URL = "http://localhost:8000/api";
+// const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://reserveapi.onrender.com/api";
 
 const fetchAPI = async (url: string, options?: RequestInit) => {
   const response = await fetch(url, options);

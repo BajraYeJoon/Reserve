@@ -5,7 +5,7 @@ import { Key, useState } from "react";
 import apiService from "../utils/apiService";
 
 import CartRoomCard from "../components/CartRoomCard/CartRoomCard";
-import BookingForm from "../components/BookingForm/BookingForm";
+import BookingForm from "../components/BookingForm/BookingForm"; // Import RootState type from the appropriate file
 import InvoiceReceipt from "../components/Invoice/InvoiceReceipt";
 
 // interface CartRoomInfo {
@@ -17,6 +17,10 @@ import InvoiceReceipt from "../components/Invoice/InvoiceReceipt";
 //   type: string;
 // }
 
+interface RootState {
+  cart: any;
+}
+
 const Cart = () => {
   const [checkIn, setCheckIn] = useState<string>("");
   const [checkOut, setCheckOut] = useState<string>("");
@@ -24,7 +28,7 @@ const Cart = () => {
   const [isBooked, setIsBooked] = useState(false);
   const [invoice, setInvoice] = useState<any>(null);
 
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch();
 
   const handleBookAll = async () => {
