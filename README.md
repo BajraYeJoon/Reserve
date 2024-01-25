@@ -1,6 +1,7 @@
 # Reserve - A Hotel Room Booking Platform
 
-![Live Site](https://reserve-phi.vercel.app/)
+Check the live site [here](https://reserve-phi.vercel.app/)
+
 ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/homepage.png)
 
 Reserve — is for you if you **want to book premium hotels** in easy way with intuitive UI interfaces.
