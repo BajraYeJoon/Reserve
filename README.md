@@ -1,5 +1,7 @@
 # Reserve - A Hotel Room Booking Platform
 
+![Vercel](https://vercelbadge.vercel.app/api/BajraYeJoon/Reserve)
+
 Check the live site [here](https://reserve-phi.vercel.app/)
 
 ![](https://github.com/BajraYeJoon/Reserve/blob/main/frontend/src/assets/homepage.png)
