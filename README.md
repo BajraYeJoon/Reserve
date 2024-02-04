@@ -84,6 +84,9 @@ This project is divided into two parts: frontend and backend. Follow the instruc
       ```
       The frontend will run on `port 5173`
 
+> [!NOTE]
+> If you want to run the project locally, please comment the `BASE_URL` of deployed api in `apiService.ts` and uncomment `localhost:8000` url.
+
 Tech Stack
 ============
 
