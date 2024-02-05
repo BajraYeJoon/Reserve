@@ -10,6 +10,8 @@ const InvoiceReceipt = ({ invoice }: any) => {
 
     doc.text("Invoice ID: " + invoice._id, 10, 10);
     doc.text("Customer Name: " + invoice.customerName, 10, 20);
+    doc.text("Room Name: " + invoice.roomName, 80, 20);
+
     doc.text("Status: " + invoice.Status, 10, 30);
     doc.text(
       "Check In Date: " + new Date(invoice.checkInDate).toLocaleDateString(),
@@ -36,6 +38,8 @@ const InvoiceReceipt = ({ invoice }: any) => {
       </h2>
 
       <p className="text-base font-bold my-4">Invoice ID: {invoice?._id}</p>
+
+      <p>Room Name: {invoice?.roomName}</p>
 
       {/* INVOICE INFORMATION  */}
       <div className="flex justify-between gap-12">
