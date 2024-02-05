@@ -66,7 +66,7 @@ const InvoiceReceipt = ({ invoice }: any) => {
 
       {/* INVOICE PDF DOWNLOAD */}
       <div
-        className="px-2 py-4 bg-gray-200 text-center rounded-md"
+        className="px-2 py-4 bg-gray-200 text-center cursor-pointer rounded-md"
         onClick={downloadPdf}
       >
         <span>Download</span>
