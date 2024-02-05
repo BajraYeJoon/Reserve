@@ -1,4 +1,7 @@
+// Uncomment this when working with localhost backend
 // const BASE_URL = "http://localhost:8000/api";
+
+//Deployed api url
 const BASE_URL = "https://reserveapi.onrender.com/api";
 
 const fetchAPI = async (url: string, options?: RequestInit) => {
