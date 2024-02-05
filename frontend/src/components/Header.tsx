@@ -20,13 +20,13 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="flex items-center space-x-6">
-          <FaBed size={30} />
-          <Link to="/cart">
+        <Link to="/cart">
+          <div className="flex items-center space-x-6">
+            <FaBed size={30} />
             Reserved Rooms:
             <span className="p-2 bg-gray-400 rounded-full">{cartCount}</span>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </nav>
   );

@@ -9,6 +9,7 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { MaxWidthWrapper } from "../screen/Layout/MaxWIdthWrapper";
+import { FaBed } from "react-icons/fa";
 
 const localizer = momentLocalizer(moment);
 
@@ -24,6 +25,7 @@ const BookRoom = () => {
   const { id } = useParams<{ id: string }>();
   const [room, setRoom] = useState<Room | null>(null);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   const [bookings, setBookings] = useState([]);
 
@@ -44,7 +46,7 @@ const BookRoom = () => {
 
   useEffect(() => {
     console.log("usefefect");
-    // Fetch bookings from your API
+    // Fetch bookings from API
     const fetchBookings = async () => {
       try {
         console.log("Bookings:");
@@ -71,6 +73,7 @@ const BookRoom = () => {
   const handleAddToCart = () => {
     dispatch(addToCart({ ...room, id: id! }));
     setIsAddedToCart(true);
+    setShowMessage(true);
   };
 
   if (!room) {
@@ -101,6 +104,11 @@ const BookRoom = () => {
             onClick={handleAddToCart}
             disabled={isAddedToCart}
           />
+          {showMessage && (
+            <p className="mt-2 italic ">
+              Please click the <FaBed size={30} /> icon to book the room
+            </p>
+          )}
         </div>
 
         <div
