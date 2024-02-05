@@ -14,7 +14,7 @@ interface Invoice extends Document {
   Status: string;
 }
 
-// Create the schema for the invoice and invluding the room information to be included in the frontend for downloading
+// Create the schema for the invoice and invluding the room information to be included in the frontend.
 const invoiceSchema = new Schema<Invoice>({
   bookingId: { type: String, ref: "Booking", required: true },
   customerName: { type: String, required: true },
