@@ -18,6 +18,8 @@ const AllRooms = () => {
     fetchRooms();
   }, []);
 
+  if (rooms.length === 0) return <div>Loading...Please wait</div>;
+
   return (
     <div className="flex flex-col items-start gap-4 mt-6 md:mt-12 ">
       <h1 className="text-lg md:text-2xl font-medium ">
